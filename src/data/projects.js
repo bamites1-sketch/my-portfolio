@@ -29,7 +29,7 @@ export const projects = [
     image: null,
     tech: ["React", "Tailwind", "REST API"],
     category: "Frontend",
-    live: "https://weather-bamites1-sketch.vercel.app",
+    live: "https://weather-mauve-six-20.vercel.app",
     github: "https://github.com/bamites1-sketch/weather",
     featured: false,
   },
