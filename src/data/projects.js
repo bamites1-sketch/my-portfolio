@@ -16,7 +16,7 @@ export const projects = [
     description: "Modern e-commerce UI with cart system, product filtering, and responsive checkout flow.",
     image: "/gebeya.png",
     tech: ["React", "Node.js", "Tailwind"],
-    category: "Frontend",
+    category: "Fullstack",
     live: "https://gebeya-b.vercel.app",
     github: "https://github.com/bamites1-sketch",
     featured: true,
