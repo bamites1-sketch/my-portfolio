@@ -29,8 +29,8 @@ export const projects = [
     image: null,
     tech: ["React", "Tailwind", "REST API"],
     category: "Frontend",
-    live: null,
-    github: "https://github.com/bamites1-sketch",
+    live: "https://weather-bamites1-sketch.vercel.app",
+    github: "https://github.com/bamites1-sketch/weather",
     featured: false,
   },
   {
