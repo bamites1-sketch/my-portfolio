@@ -57,10 +57,10 @@ function ImageFallback({ title, category }) {
   )
 }
 
-function ProjectImage({ src, title, category, live }) {
+function ProjectImage({ src, title, category }) {
   const [status, setStatus] = useState(src ? 'loading' : 'fallback')
 
-  if (status === 'fallback') {
+  if (status === 'fallback' || !src) {
     return <ImageFallback title={title} category={category} />
   }
 
@@ -76,10 +76,10 @@ function ProjectImage({ src, title, category, live }) {
         alt={title}
         onLoad={() => setStatus('loaded')}
         onError={() => setStatus('fallback')}
-        className={`w-full h-full object-cover object-top
-                    group-hover:scale-105 transition-transform duration-500
-                    ${status === 'loaded' ? 'opacity-100' : 'opacity-0'}`}
-      />    </>
+        style={{ opacity: status === 'loaded' ? 1 : 0 }}
+        className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500"
+      />
+    </>
   )
 }
 
@@ -123,7 +123,6 @@ export default function ProjectCard({ project, featured = false }) {
           src={project.image}
           title={project.title}
           category={project.category}
-          live={project.live}
         />
         {/* Bottom gradient overlay */}
         <div className="absolute inset-x-0 bottom-0 h-12

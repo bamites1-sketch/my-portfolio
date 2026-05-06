@@ -26,7 +26,7 @@ export const projects = [
     id: 4,
     title: "Weather Dashboard",
     description: "Real-time weather dashboard using OpenWeather API with location search and 7-day forecast.",
-    image: "/weather.png",
+    image: "/weather-screenshot.jpg",
     tech: ["React", "Tailwind", "REST API"],
     category: "Frontend",
     live: "https://weather-mauve-six-20.vercel.app",

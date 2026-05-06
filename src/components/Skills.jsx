@@ -105,7 +105,11 @@ export default function Skills() {
 
         {/* Category tabs */}
         <RevealWrapper delay={100}>
-          <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div style={{
+            display: 'flex', gap: '0.5rem', marginBottom: '2.5rem',
+            flexWrap: 'wrap', justifyContent: 'center',
+            padding: '0 0.5rem',
+          }}>
             {Object.keys(CATEGORIES).map(cat => {
               const color = CAT_COLORS[cat]
               const isActive = activeTab === cat
@@ -114,13 +118,20 @@ export default function Skills() {
                   key={cat}
                   onClick={() => setActiveTab(cat)}
                   style={{
-                    padding: '0.6rem 1.5rem', borderRadius: '100px', border: 'none',
-                    cursor: 'pointer', fontSize: '0.875rem', fontWeight: '600',
+                    padding: 'clamp(0.45rem, 1.5vw, 0.6rem) clamp(0.9rem, 3vw, 1.5rem)',
+                    borderRadius: '100px', border: 'none',
+                    cursor: 'pointer',
+                    fontSize: 'clamp(0.78rem, 2.5vw, 0.875rem)',
+                    fontWeight: '600',
                     transition: 'all 0.25s ease',
                     background: isActive ? `linear-gradient(135deg, ${color.from}, ${color.to})` : 'var(--input-bg)',
                     color: isActive ? '#fff' : 'var(--text-secondary)',
                     boxShadow: isActive ? `0 0 20px ${color.from}44` : 'none',
                     border: isActive ? 'none' : '1px solid rgba(255,255,255,0.08)',
+                    flex: '1 1 auto',
+                    maxWidth: '160px',
+                    minWidth: '80px',
+                    textAlign: 'center',
                   }}
                 >
                   {cat}
@@ -132,10 +143,10 @@ export default function Skills() {
 
         {/* Skills grid */}
         <motion.div
+          key={activeTab}
           style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem' }}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
         >
           {CATEGORIES[activeTab].map((skill, i) => (
