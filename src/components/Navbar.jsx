@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import profileImg from '../assets/profile.jpg'
 import ThemeToggle from './ThemeToggle'
 
-const links = ['About', 'Projects', 'Skills', 'Stats', 'Contact']
+const links = ['About', 'Projects', 'Skills', 'Certificate', 'Stats', 'Contact']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
